@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // apply the saved colour theme + light/dark mode before first paint (no flash)
+      try {
+        var d = document.documentElement
+        d.dataset.accent = localStorage.getItem('btm-accent') || 'ocean'
+        d.dataset.mode = localStorage.getItem('btm-mode') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light')
+      } catch (e) {}
+    </script>
+    <meta name="theme-color" content="#fafaf9" />
+    <title>Been There — colour in everywhere you've been</title>
+    <meta name="description" content="Tap the countries, Indian states or US states you've visited, then export a two-tone poster to share." />
+    <meta property="og:title" content="Been There — colour in everywhere you've been" />
+    <meta property="og:description" content="Tap the places you've visited and export a two-tone travel poster." />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
